@@ -1,0 +1,175 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: Verdana, sans-serif;
+}
+
+body {
+	--color: rgb(236, 236, 236);
+
+	--button-color: var(--color);
+	--button-disabled-color: rgb(194, 194, 194);
+
+	--button-background-color: rgb(53, 53, 53);
+	--button-hover-background-color: rgb(73, 73, 73);
+	--button-disabled-background-color: rgb(31, 31, 31);
+
+	--select-color: var(--color);
+
+	--select-background-color: var(--button-background-color);
+	--select-hover-background-color: var(--button-hover-background-color);
+
+	--prompt-color: var(--color);
+
+	--prompt-background-color: var(--button-background-color);
+
+	background-color: rgb(12, 12, 12);
+	color: var(--color);
+}
+
+#content {
+	padding: 1rem;
+}
+
+.header {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.text {
+	display: block;
+	font-size: 1rem;
+	margin: 0.25rem 0;
+}
+
+.button {
+	background-color: var(--button-background-color);
+	color: inherit;
+
+	font-size: 1rem;
+
+	border: none;
+	border-radius: 0.25rem;
+
+	padding: 0.5rem;
+	margin: 0.5rem 0.25rem;
+
+	transition: 0.1s background-color;
+}
+
+.button:nth-child(1) {
+	margin-left: 0;
+}
+
+.button:hover {
+	cursor: pointer;
+	background-color: var(--button-hover-background-color);
+}
+
+.button:disabled {
+	color: var(--button-disabled-color);
+	background-color: var(--button-disabled-background-color);
+	cursor: not-allowed;
+}
+
+.status[ok="true"] {
+	color: rgb(61, 233, 61);
+}
+
+.status[ok="false"] {
+	color: rgb(233, 61, 61);
+}
+
+#connection_status_retry {
+	display: none;
+}
+
+#authentication_display {
+	display: none;
+}
+
+.select {
+	background-color: var(--select-background-color);
+
+	font-size: 1rem;
+
+	color: var(--select-color);
+	border: 1px solid #111417;
+
+	outline: none;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+
+	transition: 0.25s background-color;
+}
+
+.select option {
+	background-color: inherit;
+}
+
+.select:hover {
+	background-color: var(--select-hover-background-color);
+}
+
+#game_select {
+	display: block;
+	margin: 0.5rem 0;
+}
+
+#options {
+	display: none;
+}
+
+#prompt {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	overflow: hidden;
+
+	background-color: rgba(0, 0, 0, 0.35);
+
+	transition: 0.25s background-color;
+}
+
+#prompt_window {
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+
+	margin-top: 2rem;
+
+	padding: 2rem;
+	border-radius: 1rem;
+
+	min-width: 35%;
+
+	background-color: var(--prompt-background-color);
+
+	transition: 0.25s top;
+}
+
+#prompt_yes {
+	background-color: rgb(19, 201, 19);
+}
+
+#prompt_no {
+	background-color: rgb(216, 63, 63);
+}
+
+#prompt_window button {
+	font-size: 1.5rem;
+	width: calc(50% - 2rem);
+}
+
+#prompt[show_prompt="false"] {
+	background-color: transparent;
+	pointer-events: none;
+}
+
+#prompt[show_prompt="false"] #prompt_window {
+	top: -100%;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Admin - ThatTimothy</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="main.js"></script>
+	</head>
+	<body onload="onLoad()">
+		<div id="content">
+			<h1 class="header">Admin Panel</h1>
+
+			<p1 class="text">
+				Connection Status:
+				<p1 id="connection_status" class="status">...</p1>
+				<button
+					onclick="location.reload()"
+					class="button"
+					id="connection_status_retry"
+				>
+					Retry
+				</button>
+			</p1>
+			<p1 id="authentication_display" class="text">
+				Authenticated:
+				<p1 id="authentication_status" class="status">...</p1>
+			</p1>
+
+			<div id="options">
+				<select
+					id="game_select"
+					class="select"
+					onchange="onGameSelectChange()"
+				>
+					<option selected disabled hidden>Select game...</option>
+					<option value="1">Roblox Uno</option>
+					<option value="2">The Tower Tycoon</option>
+					<option value="3">Stair Climbing Simulator</option>
+					<option value="4">ThatTimothy's Admin House</option>
+				</select>
+				<button disabled id="shutdown_all_servers" class="button">
+					Shut Down All Servers
+				</button>
+				<button disabled id="migrate_to_latest_update" class="button">
+					Migrate To Latest Update
+				</button>
+			</div>
+		</div>
+		<div id="prompt" show_prompt="false">
+			<div id="prompt_window">
+				<h1 id="prompt_title" class="header">Test</h1>
+				<p1 id="prompt_message" class="text">Test</p1>
+				<button id="prompt_yes" class="button">Yes</button>
+				<button id="prompt_no" class="button">No</button>
+			</div>
+		</div>
+	</body>
+</html>
